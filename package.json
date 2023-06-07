@@ -1,6 +1,6 @@
 {
   "name": "@funkey/eslint-plugin-demo-util",
-  "version": "0.0.0",
+  "version": "0.0.0-alpah.0",
   "description": "a eslint plugin for demo-util",
   "keywords": [
     "eslint",
@@ -34,5 +34,10 @@
   "peerDependencies": {
     "eslint": ">=7"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  }
 }
