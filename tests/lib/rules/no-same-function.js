@@ -1,5 +1,5 @@
 /**
- * @fileoverview instanceof 操作符不够准确，请使用@jslib-book/type 
+ * @fileoverview 别出现和 utils 重名的函数
  * @author daolanfler
  */
 "use strict";
@@ -8,28 +8,25 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/typeof-instanceof-limit"),
+const rule = require("../../../lib/rules/no-same-function"),
   RuleTester = require("eslint").RuleTester;
-
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-const msg = `instanceof 操作符不够准确，请使用@jslib-book/type`;
+const msg = `@jslib-book/utils中已存在此函数`;
 
-const parserOptions = {
-  ecmaVersion: 2022,
-  sourceType: 'module',
-};
-
-const ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('type-instanceof-limit', rule, {
-  valid: [{ code: 'const a = typeof "String"' }],
+const ruleTester = new RuleTester();
+ruleTester.run("no-same-function", rule, {
+  valid: [
+    // give me some code that won't trigger a warning
+    { code: "function aaa() {}" },
+  ],
 
   invalid: [
     {
-      code: 'const b = "test2" instanceof "String"',
+      code: "function truncate() {}",
       errors: [
         {
           message: msg,
