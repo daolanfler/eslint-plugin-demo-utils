@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-demo-util",
+  "name": "@funkey/eslint-plugin-demo-util",
   "version": "0.0.0",
   "description": "a eslint plugin for demo-util",
   "keywords": [
